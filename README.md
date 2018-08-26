@@ -20,7 +20,8 @@ $ ganache-cli
 $ npm run bounty
 ```
 
-WebApp will run automatically by lite-server. Now you can interact with it!
+WebApp will run automatically by lite-server. Now you can interact with it!  
+If it is not automatically opened, open URL http://localhost:3000/.
 
 ## Test
 I create the test for the Ownable, Bounty Hub, Circuit Breaker and Library Demo.
