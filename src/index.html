@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Let's Hunt Bounty</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="animate">
+        <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Let's Hunt Bounty</a>
+        <div class="account-status">Welcome!</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+
+            <ul class="navbar-nav ml-md-auto d-md-flex">
+            <li class="nav-item">
+                <a id="posted" class="nav-link" href="javascript:void(0);">
+                <button type="button" class="btn btn-light">Posted Bounties</button>
+                <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a id="finished" class="nav-link" href="javascript:void(0);">
+                <button type="button" class="btn btn-light">Finished Bounties</button>
+                <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a id="all" class="nav-link" href="javascript:void(0);">
+                <button type="button" class="btn btn-light">All Bounties</button>
+                <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a id="own" class="nav-link" href="javascript:void(0);">
+                <button type="button" class="btn btn-success">My Bounties</button>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a id="register" class="nav-link" href="javascript:void(0)">
+                <button type="button" class="btn btn-primary">Register Bounty</button>
+                </a>
+            </li>
+            </ul>
+        </div>
+        </nav>
+        <!-- show Bounty -->
+        <div id="bountyRow" class="container-fluid">
+
+        </div>
+
+        <!-- bounty Template -->
+        <div id="bountyTemplate" class="row" style="display: none;">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body bounty-card">
+                        <h5 class="card-title">Try Other</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Bootstrap 4.0.0 Snippet by pradeep330</h6>
+                        <p class="card-text">You can also try different version of Bootstrap V4 side menu. Click below link to view
+                            all Bootstrap Menu versions.</p>
+                        <a href="javascript:void(0);" class="card-link link-1">link</a>
+                        <a href="javascript:void(0);" class="card-link link-2">Another link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- work Template -->
+        <div id="workTemplate" class="row" style="display: none;">
+            <div class="col">
+                <div class="card-body work-card">
+                    <h6 class="card-subtitle mb-2 text-muted">Address</h6>
+                    <p class="card-text">Comment</p>
+                    <button type="button" class="btn btn-default">Not Accepted Yet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- register Bounty -->
+    <div id="registerTemplate" class="row justify-content-center" style="margin-top:100px; display: none;">
+        <div class="col-md-6">
+            <div class="card">
+                <header class="card-header">
+                    <h4 class="card-title mt-2">Register Bounty</h4>
+                </header>
+                
+                <article class="card-body">
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label>Bounty Title</label>
+                            <input id="title" type="text" class="form-control" placeholder="">
+                            <small class="form-text text-muted">Please enter a clear title</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Bounty Reward</label>
+                            <input id="reward" type="text" class="form-control" placeholder="">
+                            <small class="form-text text-muted">Please enter a clear reward</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Bounty Description</label>
+                            <textarea id="description" class="form-control" rows="5" id="comment"></textarea>
+                            <small class="form-text text-muted">Please enter a clear description</small>
+                        </div>
+                        
+                    </form>
+                </article>
+                
+                <div class="border-top card-body text-center">
+                    <div class="form-group">
+                        <button id="bountyRegister" type="submit" class="btn btn-primary btn-block"> Register </button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
