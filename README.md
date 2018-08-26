@@ -20,4 +20,4 @@ $ ganache-cli
 $ npm run bounty
 ```
 
-WebApp will run automatically by lite-server.
+WebApp will run automatically by lite-server. Now you can interact with it!
