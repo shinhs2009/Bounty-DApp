@@ -21,3 +21,8 @@ $ npm run bounty
 ```
 
 WebApp will run automatically by lite-server. Now you can interact with it!
+
+## Test
+I create the test for the Ownable, Bounty Hub, Circuit Breaker and Library Demo.
+
+All the functions in Bounty contract is used by BountyHub, so I don't test about it. And Bounty Hub inherits the Circuit Breaker, so I do test Circuit Breaker Design Pattern in the Bounty Hub Test.
