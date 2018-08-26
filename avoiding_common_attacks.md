@@ -5,8 +5,8 @@ I don't enough time to cover it, So I mentioned the weakness point and solutions
 
 1. Bounty informations  
 In frontend, I don't check validity of data, so there can be weakness point.  
-First, Biggest one is overflow, because I don't check the entered data cypher check. It can be solved by checking size of integer.  
-Second, Users can make Bounty Reward bigger than their balance. It is Logic bugs, because in 1 bounty contract Bounty Owner can accept many Works.
+First, Biggest one is overflow, because I don't check the entered data number. It can make the overflow problem. It can be solved by checking number of integer in frontend.  
+Second, Users can make Bounty Reward bigger than their balance. It is Logic bugs, because in bounty contract Bounty Owner can accept many Works.
 It can be solved by set maximum hunter number and checking the balance of bounty Owner.
 
 2. Denial of Service Attack  
