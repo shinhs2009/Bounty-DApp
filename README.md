@@ -21,7 +21,11 @@ $ npm run bounty
 ```
 
 WebApp will run automatically by lite-server. Now you can interact with it!  
-If it is not automatically opened, open URL http://localhost:3000/.
+If it is not automatically opened, open URL http://localhost:3000/.  
+
+Also I deployed my contract at Rinkeby Test Network. And Using IPFS to make fully decentralised Dapp.
+You can visit this URL and interact with it in Rinkeby Test Network :  
+blahblahblah
 
 ## Test
 I create the test for the Ownable, Bounty Hub, Circuit Breaker and Library Demo.
