@@ -1,10 +1,10 @@
 pragma solidity ^0.4.24;
 
-import "./Ownable.sol";
+import "./Mortal.sol";
 
 /** @title Circuit Breaker. */
 /** This Contract is provided in Course */
-contract CircuitBreaker is Ownable {
+contract CircuitBreaker is Mortal {
     /** @dev Control functions in Emergency using stopped variable. */
     bool public stopped = false;
 

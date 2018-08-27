@@ -1,1 +1,1 @@
-deployed_addresses : 0xc252bb88adda088e49ed2ba842afc39d6091d5be
+deployed_addresses : 0x4e7fa3971644f5ae1f12c822eb61ec7cd5d11178
