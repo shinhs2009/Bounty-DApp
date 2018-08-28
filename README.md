@@ -25,7 +25,7 @@ If it is not automatically opened, open URL http://localhost:3000/.
 
 Also I deployed my contract at Rinkeby Test Network. And Using IPFS to make fully decentralised Dapp.
 You can visit this URL and interact with it in Rinkeby Test Network :  
-blahblahblah
+https://gateway.ipfs.io/ipfs/QmUNqpaMufLb8F8ftDmpUocgrpfLWRjNf86THohDbFdPEG/
 
 ## Test
 I create the test for the Ownable, Bounty Hub, Circuit Breaker and Library Demo.
