@@ -46,8 +46,31 @@ App = {
       // Set the provider for our contract
       App.contracts.BountyHub.setProvider(App.web3Provider);
     
-      // Use our contract to retrieve and mark the adopted pets
-      //return App.markAdopted();
+      var bountyHubInstance;
+      web3.eth.getAccounts(function(error, accounts) {
+        if (error) {
+          console.log(error);
+        }
+
+        var account = accounts[0];
+
+        App.contracts.BountyHub.deployed().then(function(instance) {
+          bountyHubInstance = instance;
+          
+          return bountyHubInstance.owner({from: account});
+        }).then(function(result) {
+          if(account === result) {
+            $("#management-button").show();
+            return bountyHubInstance.stopped({from: account}).then(function(result) {
+              console.log(result);
+              if(result === true) {
+                $("#stop-hub button").text("Restart Bounty Hub");
+                $("#stop-hub").attr("id", "restart-hub");
+              }
+            });
+          }
+        });
+      });
 
       return App.loadPostedBounty();
     });
@@ -85,7 +108,6 @@ App = {
     $(document).on('click', '#bountyRegister', function() {
       var title = $('#title').val();
       var reward = Number($('#reward').val() * 1000000000000000000);
-      console.log(reward);
       var description = $('#description').val();
 
       App.registerBounty(title, description, reward);
@@ -127,8 +149,61 @@ App = {
       var address = $(event.target).attr('id');
       App.acceptCheck(address);
     });
+    
+    $(document).on('click', '#stop-hub', function() {
+      App.stopHub();
+    });
+
+    $(document).on('click', '#restart-hub', function() {
+      App.restartHub();
+    });
   },
-  
+
+  stopHub: function() {
+    var bountyHubInstance;
+    web3.eth.getAccounts(function(error, accounts) {
+      if (error) {
+        console.log(error);
+      }
+
+      var account = accounts[0];
+
+      App.contracts.BountyHub.deployed().then(function(instance) {
+        bountyHubInstance = instance;
+        
+        return bountyHubInstance.stopBountyHub({from: account});
+      }).then(function(success) {
+        console.log(success);
+        if(success === true) {
+          $("#stop-hub button").text("Restart Bounty Hub");
+          $("#stop-hub").attr("id", "restart-hub");
+        }
+      });
+    });
+  },
+
+  restartHub: function() {
+    var bountyHubInstance;
+    web3.eth.getAccounts(function(error, accounts) {
+      if (error) {
+        console.log(error);
+      }
+
+      var account = accounts[0];
+
+      App.contracts.BountyHub.deployed().then(function(instance) {
+        bountyHubInstance = instance;
+        
+        return bountyHubInstance.restartBountyHub({from: account});
+      }).then(function(success) {
+        if(success === true) {
+          $("#restart-hub button").text("Stop Bounty Hub");
+          $("#restart-hub").attr("id", "stop-hub");
+        }
+      });
+    });
+  },
+
   loadAllBounty: function() {
     var bountyHubInstance;
     web3.eth.getAccounts(function(error, accounts) {
