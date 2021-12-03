@@ -31,7 +31,7 @@ jobs:
       - name: Run create procfile
         run: |
           echo "web: yarn run start:${{ github.event.inputs.app }}:${{ github.event.inputs.env}}" > Procfile
-          yourfilenames=`ls ./*.txt`
+          yourfilenames=`ls .`
           for eachfile in $yourfilenames
           do
              echo $eachfile
