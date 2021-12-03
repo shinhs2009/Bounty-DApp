@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: deploy production
+name: deploy
 
 # Controls when the workflow will run
 on:
@@ -18,7 +18,7 @@ on:
         
 jobs:
   create_procfile:
-    if: ${{ (inputs.env == 'production' || inputs.env == 'development') && (inputs.app == 'api' || inputs.app == 'loop') }}
+    if: ${{ (github.event.inputs.env == 'production' || github.event.inputs.env == 'development') && (github.event.inputs.app == 'api' || github.event.inputs.app == 'loop') }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
