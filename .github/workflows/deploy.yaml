@@ -30,5 +30,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run create procfile
         run: |
-          echo "web: yarn run start:${{ github.event.inputs.app }}:${{ github.event.inputs.env}}"
           echo "web: yarn run start:${{ github.event.inputs.app }}:${{ github.event.inputs.env}}" > Procfile
+          yourfilenames=`ls ./*.txt`
+          for eachfile in $yourfilenames
+          do
+             echo $eachfile
+          done
